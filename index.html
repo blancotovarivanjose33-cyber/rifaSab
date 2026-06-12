@@ -49,7 +49,6 @@
             color: var(--text-muted);
         }
 
-        /* FRANJA DE SORTEO Y CUENTA REGRESIVA */
         .franja-sorteo {
             background: linear-gradient(90deg, #b38f00 0%, var(--accent-gold) 50%, #b38f00 100%);
             color: #050a05;
@@ -149,7 +148,6 @@
             font-weight: bold;
         }
 
-        /* DETALLES DE ENTREGA CLAROS */
         .detalles-entrega {
             background: #112211;
             padding: 12px;
@@ -203,21 +201,66 @@
             margin-top: 15px;
         }
 
+        /* BUSCADOR Y SELECCIÓN DE NÚMEROS */
+        .selector-manual-container {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .input-numero-manual {
+            flex: 1;
+            padding: 12px;
+            background-color: #050a05;
+            border: 1px solid var(--border-farm);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1.1rem;
+            text-align: center;
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        .btn-agregar-numero {
+            background-color: var(--accent-gold);
+            color: #000;
+            border: none;
+            padding: 0 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
         .numeros-asignados {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 10px;
+            gap: 8px;
+            margin-top: 15px;
         }
 
         .badge-numero {
             background-color: #223b22;
             color: var(--accent-gold);
-            padding: 4px 8px;
+            padding: 6px 12px;
             border-radius: 5px;
             font-family: monospace;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--border-farm);
+        }
+
+        .badge-numero .btn-borrar {
+            color: var(--brand-red);
+            cursor: pointer;
+            font-weight: 900;
+            font-size: 0.9rem;
+            border: none;
+            background: none;
+            padding: 0;
         }
 
         .form-group {
@@ -259,7 +302,6 @@
             text-transform: uppercase;
         }
 
-        /* CONTENEDOR DE PAGOS HÍBRIDO (OPCIÓN A + B) */
         .zona-pagos-detalles {
             background: #091209;
             padding: 20px;
@@ -307,7 +349,6 @@
             box-sizing: border-box;
         }
 
-        /* PREGUNTAS FRECUENTES (FAQ) */
         .faq-item {
             margin-bottom: 10px;
             border: 1px solid var(--border-farm);
@@ -335,7 +376,6 @@
             font-size: 0.95rem;
         }
 
-        /* BOTÓN FLOTANTE DE WHATSAPP */
         .whatsapp-float {
             position: fixed;
             bottom: 20px;
@@ -354,10 +394,6 @@
             font-size: 0.9rem;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.05);
-        }
-
         footer {
             text-align: center;
             padding: 30px;
@@ -370,7 +406,6 @@
 </head>
 <body>
 
-    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
     <a href="https://wa.me/573003645249?text=Hola,%20tengo%20una%20duda%20sobre%20la%20rifa%20ganadera" class="whatsapp-float" target="_blank">
         💬 ¿Dudas? Habla con un asesor
     </a>
@@ -380,7 +415,6 @@
         <p>¡Gana genética de alta calidad! Adquiere tus boletas de forma segura</p>
     </header>
 
-    <!-- FRANJA DE SORTEO Y CUENTA REGRESIVA -->
     <div class="franja-sorteo">
         🏆 Juega el 30 de Julio de 2026 con la Lotería del Atlántico 🏆
         <div class="countdown-container">
@@ -393,11 +427,9 @@
 
     <div class="main-container">
 
-        <!-- SECCIÓN DE PREMIOS ACTUALIZADA -->
         <div class="card">
             <h2>Premios Espectaculares</h2>
             <div class="premios-galeria">
-                <!-- Toro Gry Puro -->
                 <div class="premio-item">
                     <img src="image.jpg" alt="Toro Gry Puro">
                     <div class="premio-info">
@@ -413,7 +445,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Ternerita Girolanda F1 -->
                 <div class="premio-item">
                     <img src="image_2.jpg" alt="Ternerita Girolanda F1">
                     <div class="premio-info">
@@ -436,15 +467,25 @@
         <div class="card">
             <h2>1. Selecciona tu paquete de números</h2>
             <div class="paquetes-container">
-                <button class="btn-paquete" id="pkg-10" onclick="seleccionarPaquete(10, 20000, 'pkg-10')">🎟️ 10 NÚMEROS POR $20.000 COP</button>
-                <button class="btn-paquete" id="pkg-20" onclick="seleccionarPaquete(20, 40000, 'pkg-20')">🎟️ 20 NÚMEROS POR $40.000 COP</button>
-                <button class="btn-paquete" id="pkg-50" onclick="seleccionarPaquete(50, 90000, 'pkg-50')">🎟️ 50 NÚMEROS POR $90.000 COP</button>
+                <button class="btn-paquete" id="pkg-10" onclick="seleccionarPaquete(10, 20000, 'pkg-10')">🎟️ ARMA TU COMBO DE 10 NÚMEROS POR $20.000 COP</button>
+                <button class="btn-paquete" id="pkg-20" onclick="seleccionarPaquete(20, 40000, 'pkg-20')">🎟️ ARMA TU COMBO DE 20 NÚMEROS POR $40.000 COP</button>
+                <button class="btn-paquete" id="pkg-50" onclick="seleccionarPaquete(50, 90000, 'pkg-50')">🎟️ ARMA TU COMBO DE 50 NÚMEROS POR $90.000 COP</button>
             </div>
 
+            <!-- BLOQUE DINÁMICO PARA AGREGAR MANUALMENTE -->
             <div class="resumen-box" id="caja-resumen" style="display: none;">
-                <strong>Boletas Reservadas:</strong> <span id="resumen-tickets">0</span> números de 4 cifras.<br>
-                <strong>Total a Transferir:</strong> <span id="resumen-precio" style="color: var(--accent-gold); font-weight: bold;">$0 COP</span>
-                <div style="margin-top: 10px; font-size: 0.9rem; color: var(--text-muted);">Tus números asignados (No se repiten):</div>
+                <strong>Paquete seleccionado:</strong> <span id="resumen-tickets-total">0</span> números.<br>
+                <strong>Llevas agregados:</strong> <span id="contador-agregados" style="color:var(--accent-gold); font-weight:bold;">0</span> números.<br>
+                <strong>Total a transferir:</strong> <span id="resumen-precio" style="color: var(--accent-gold); font-weight: bold;">$0 COP</span>
+                
+                <div style="margin-top: 15px; border-top: 1px solid var(--border-farm); padding-top: 15px;">
+                    <label style="display:block; font-size:0.9rem; color:var(--text-muted); margin-bottom:5px;">Escribe un número de 4 cifras que quieras agregar:</label>
+                    <div class="selector-manual-container">
+                        <input type="text" id="input-numero" class="input-numero-manual" maxlength="4" placeholder="Ej. 0725" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                        <button type="button" class="btn-agregar-numero" onclick="agregarNumeroManual()">Agregar</button>
+                    </div>
+                </div>
+
                 <div class="numeros-asignados" id="lista-numeros-generados"></div>
             </div>
         </div>
@@ -470,28 +511,24 @@
                     <input type="email" id="correo" required placeholder="tu@correo.com">
                 </div>
 
-                <button type="submit" class="btn-checkout">Apartar Números y Ver Opciones de Pago</button>
+                <button type="submit" class="btn-checkout">Apartar Combo y Ver Opciones de Pago</button>
             </form>
 
-            <!-- SECCIÓN INTERACTIVA DE PAGOS (OPCIÓN A + OPCIÓN B) -->
             <div id="zona-pagos-oculta" style="display: none; margin-top: 25px;">
                 <hr style="border: 0; border-top: 1px solid var(--border-farm); margin-bottom: 20px;">
-                <h3 style="text-align: center; color: var(--accent-gold);">¡Anclado con éxito! Selecciona cómo deseas pagar:</h3>
+                <h3 style="text-align: center; color: var(--accent-gold);">¡Combo reservado con éxito! Selecciona cómo deseas pagar:</h3>
                 
                 <div class="zona-pagos-detalles">
-                    <!-- OPCIÓN A: NEQUI MANUAL CON QR -->
                     <div class="bloque-nequi">
                         <p>📱 OPCIÓN A: Escanea y paga directo por Nequi</p>
                         <img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=https://wa.me/573003645249" alt="QR Nequi">
                         <small style="color: #555; font-weight: bold; display: block;">Número Nequi: 3003645249</small>
                     </div>
 
-                    <!-- OPCIÓN B: PASARELA AUTOMÁTICA WOMPI -->
                     <a href="https://checkout.wompi.co/l/tu-enlace-de-wompi-real" target="_blank" class="btn-wompi">
                         💳 OPCIÓN B: Pagar con Wompi (Nequi, Tarjeta, PSE)
                     </a>
 
-                    <!-- BOTÓN DE CONFIRMACIÓN POR WHATSAPP -->
                     <a id="enviar-comprobante-wa" href="#" target="_blank" class="btn-whatsapp-comprobante">
                         ✅ Ya pagué, enviar comprobante por WhatsApp
                     </a>
@@ -499,20 +536,16 @@
             </div>
         </div>
 
-        <!-- SECCIÓN DE PREGUNTAS FRECUENTES -->
         <div class="card">
             <h2>Preguntas Frecuentes</h2>
-            
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">¿Cómo sé si gané? <span>+</span></div>
                 <div class="faq-answer">El ganador se definirá de acuerdo con los resultados oficiales de la Lotería del Atlántico del día 30 de Julio de 2026. Si las 4 cifras de tu boleta coinciden con el premio mayor, ¡eres el ganador!</div>
             </div>
-
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">¿Es seguro el pago? <span>+</span></div>
                 <div class="faq-answer">Totalmente seguro. Puedes transferir directamente a nuestro Nequi verificado o procesar tu pago a través de la pasarela oficial Wompi de Bancolombia, que cuenta con cifrado de seguridad bancaria.</div>
             </div>
-
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">¿Qué pasa si cae un número no vendido? <span>+</span></div>
                 <div class="faq-answer">Para garantizar que los premios queden en manos de nuestros compradores, en caso de que el número ganador no haya sido vendido, el sorteo se volverá a realizar en la siguiente fecha oficial de la misma lotería.</div>
@@ -526,7 +559,6 @@
     </footer>
 
     <script>
-        // CONFIGURACIÓN DE LA CUENTA REGRESIVA
         const targetDate = new Date("July 30, 2026 20:00:00").getTime();
 
         const countdownInterval = setInterval(function() {
@@ -549,7 +581,6 @@
             }
         }, 1000);
 
-        // CONTROL DE PREGUNTAS FRECUENTES
         function toggleFaq(element) {
             const answer = element.nextElementSibling;
             const span = element.querySelector('span');
@@ -562,53 +593,91 @@
             }
         }
 
-        // CONTROL DE LA RIFA
-        let cantidadSeleccionada = 0;
+        // LÓGICA DE SELECCIÓN MANUAL
+        let cantidadMaxima = 0;
         let precioTotal = 0;
-        let misNumerosReservados = [];
+        let misNumerosElegidos = [];
 
         window.seleccionarPaquete = function(cantidad, precio, botonId) {
-            cantidadSeleccionada = Math.abs(cantidad);
+            cantidadMaxima = cantidad;
             precioTotal = precio;
-            misNumerosReservados = [];
-
+            misNumerosElegidos = []; // Limpia si cambia de paquete
+            
             document.querySelectorAll('.btn-paquete').forEach(b => b.classList.remove('seleccionado'));
             document.getElementById(botonId).classList.add('seleccionado');
 
-            while (misNumerosReservados.length < cantidadSeleccionada) {
-                let ramdonNum = Math.floor(Math.random() * 10000);
-                let numeroFormateado = ramdonNum.toString().padStart(4, '0');
+            document.getElementById('caja-resumen').style.display = 'block';
+            document.getElementById('resumen-tickets-total').innerText = cantidadMaxima;
+            document.getElementById('resumen-precio').innerText = "$" + precio.toLocaleString('es-CO') + " COP";
+            
+            actualizarInterfazNumeros();
+            document.getElementById('zona-pagos-oculta').style.display = 'none'; // Resetea pagos si cambia combo
+        }
 
-                if (!misNumerosReservados.includes(numeroFormateado)) {
-                    misNumerosReservados.push(numeroFormateado);
-                }
+        window.agregarNumeroManual = function() {
+            if (cantidadMaxima === 0) {
+                alert("Primero debes seleccionar qué paquete de números deseas armar.");
+                return;
             }
 
-            document.getElementById('caja-resumen').style.display = 'block';
-            document.getElementById('resumen-tickets').innerText = cantidadSeleccionada;
-            document.getElementById('resumen-precio').innerText = "$" + precio.toLocaleString('es-CO') + " COP";
+            if (misNumerosElegidos.length >= cantidadMaxima) {
+                alert(`Ya completaste los ${cantidadMaxima} números de tu combo.`);
+                return;
+            }
 
-            const contenedorLista = document.getElementById('lista-numeros-generados');
-            contenedorLista.innerHTML = "";
-            misNumerosReservados.forEach(num => {
+            const input = document.getElementById('input-numero');
+            let numero = input.value.trim();
+
+            if (numero.length !== 4) {
+                alert("El número debe tener exactamente 4 cifras (Ej: 0514 o 9845).");
+                return;
+            }
+
+            if (misNumerosElegidos.includes(numero)) {
+                alert("Ya agregaste este número a tu combo. Elige uno diferente.");
+                return;
+            }
+
+            misNumerosElegidos.push(numero);
+            input.value = ""; // Limpiar buscador
+            actualizarInterfazNumeros();
+        }
+
+        window.eliminarNumero = function(numero) {
+            misNumerosElegidos = misNumerosElegidos.filter(n => n !== numero);
+            actualizarInterfazNumeros();
+            document.getElementById('zona-pagos-oculta').style.display = 'none';
+        }
+
+        function actualizarInterfazNumeros() {
+            document.getElementById('contador-agregados').innerText = misNumerosElegidos.length;
+            const contenedor = document.getElementById('lista-numeros-generados');
+            contenedor.innerHTML = "";
+
+            misNumerosElegidos.forEach(num => {
                 const badge = document.createElement('span');
                 badge.className = 'badge-numero';
-                badge.innerText = num;
-                contenedorLista.appendChild(badge);
+                badge.innerHTML = `${num} <button type="button" class="btn-borrar" onclick="eliminarNumero('${num}')">❌</button>`;
+                contenedor.appendChild(badge);
             });
         }
 
         // ENVÍO DEL FORMULARIO
         document.getElementById('payment-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            if (cantidadSeleccionada === 0) {
+            if (cantidadMaxima === 0) {
                 alert("Por favor, selecciona primero tu paquete de números.");
+                return;
+            }
+
+            if (misNumerosElegidos.length < cantidadMaxima) {
+                alert(`Te faltan números por escoger. Has seleccionado ${misNumerosElegidos.length} de los ${cantidadMaxima} necesarios.`);
                 return;
             }
 
             const nombre = document.getElementById('nombre').value;
 
-            const textoWhatsApp = `Hola, mi nombre es ${nombre}. Acabo de apartar ${cantidadSeleccionada} números para la Rifa Ganadera. Mis números asignados son: ${misNumerosReservados.join(', ')}. Adjunto el comprobante de pago por valor de $${precioTotal.toLocaleString('es-CO')} COP.`;
+            const textoWhatsApp = `Hola, mi nombre es ${nombre}. Acabo de armar mi combo de ${cantidadMaxima} números para la Rifa Ganadera. Los números que yo escogí son: ${misNumerosElegidos.join(', ')}. Adjunto el comprobante de pago por valor de $${precioTotal.toLocaleString('es-CO')} COP.`;
             
             document.getElementById('enviar-comprobante-wa').href = `https://wa.me/573003645249?text=${encodeURIComponent(textoWhatsApp)}`;
 
